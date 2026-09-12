@@ -76,7 +76,21 @@ server_bootstrap/
 │
 └── modules/
     ├── 00-preflight.sh
-    └── 10-users.sh
+    ├── 10-users.sh
+    ├── 20-ssh-hardening.sh
+    ├── 30-firewall.sh
+    └── 40-php.sh
+
+Le script exécute les modules dans cet ordre, chacun idempotent :
+ 
+| # | Module | Rôle |
+|---|---|---|
+| 00 | preflight | Vérifie l'OS, l'architecture, la connectivité |
+| 10 | users | Crée l'utilisateur de déploiement, clés SSH |
+| 20 | ssh-hardening | Désactive root et l'auth par mot de passe |
+| 30 | firewall | UFW : 22/80/443 uniquement |
+| 40 | php | PHP 8.4 + FPM + extensions Laravel, pool dédié |
+
 
 ## Décisions et arbitrages
 

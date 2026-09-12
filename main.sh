@@ -48,8 +48,9 @@ main(){
 
     preflight
     create_user "$deploy_user"
-    harden_ssh
+    harden_ssh "$deploy_user"
     configure_firewall
+    install_php
 
     echo "=== Installation terminée ==="
     
@@ -61,6 +62,7 @@ source "$SCRIPT_DIR/modules/00-preflight.sh"
 source "$SCRIPT_DIR/modules/01-users.sh"
 source "$SCRIPT_DIR/modules/20-ssh-hardening.sh"
 source "$SCRIPT_DIR/modules/30-firewall.sh"
+source "$SCRIPT_DIR/modules/40-php.sh"
 
 #execution
 main "$@"
