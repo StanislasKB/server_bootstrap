@@ -1,45 +1,3 @@
-<!--
-====================================================================
-MODÈLE DE README — un par dépôt de phase.
-
-À remplir PENDANT le projet, pas à la fin : les arbitrages s'oublient
-en quelques jours.
-
-Chaque section répond à une question que se pose le lecteur (client,
-recruteur, lead technique) qui accorde ~90 secondes à ton dépôt :
-
-  Titre + accroche  → « C'est quoi, en une phrase ? »
-  Le problème       → « Ça sert à quoi ? Quel problème réel ? »
-  Le résultat       → « Qu'est-ce que ça produit concrètement ? »
-  Structure         → « Comment c'est fait ? »
-  Décisions         → « Est-ce que ce type réfléchit, ou a-t-il suivi un tuto ? »
-
-La section « Décisions et arbitrages » est celle qui fait la différence.
-Si tu ne dois en soigner qu'une, c'est celle-là.
-
---------------------------------------------------------------------
-CE QUE « STRUCTURE / ARCHITECTURE » VEUT DIRE SELON LA PHASE :
-
-  Phase 1 — script bootstrap : liste ordonnée des étapes + état final
-            du serveur (composants et versions). Pas de diagramme.
-  Phase 2 — stack Docker : schéma des conteneurs et de leurs liens +
-            tableau des étapes du build multi-étapes.
-  Phase 3 — architecture AWS : vrai diagramme avec icônes AWS
-            (VPC, zones, sous-réseaux, flux).
-  Phase 4 — Terraform : arbre des modules et dépendances + diagramme
-            de l'infrastructure produite.
-  Phase 5 — CI/CD : diagramme du pipeline (déclencheurs, étapes,
-            portes d'approbation, chemin de rollback).
-  Phase 6 — EKS : schéma du cluster (namespaces, deployments, ingress,
-            chemin IRSA).
-  Phase 7 — observabilité : flux de télémétrie
-            (source → collecte → stockage → visualisation → alerte).
-
-Outils : Mermaid (rendu nativement par GitHub, le plus maintenable),
-Excalidraw, diagrams.net + AWS Architecture Icons.
-====================================================================
--->
-
 # Server Bootstrap
 
 > Transforme une instance Ubuntu vierge en serveur de production Laravel
@@ -96,15 +54,11 @@ Le script exécute les modules dans cet ordre, chacun idempotent :
 
 | Décision | Alternative écartée | Pourquoi |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| Dépôt Sury pour PHP | PPA ondrej | Le PPA ne suit plus les dernières
+versions d'Ubuntu ; Sury est le dépôt maintenu en amont |
 
-Trois à cinq lignes. Chaque ligne doit contenir une alternative réelle, pas un
-homme de paille.
 
-> **Si rien ne te vient :** relis ton `journal.md` de la phase. Chaque ligne
-> « Bloqué » est une décision déguisée — tu as buté, cherché, choisi.
+
 
 ## Utilisation
 
