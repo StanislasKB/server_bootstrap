@@ -37,7 +37,8 @@ server_bootstrap/
     ├── 10-users.sh
     ├── 20-ssh-hardening.sh
     ├── 30-firewall.sh
-    └── 40-php.sh
+    ├── 40-php.sh
+    └── 50-nginx-tls.sh
 
 Le script exécute les modules dans cet ordre, chacun idempotent :
  
@@ -48,6 +49,7 @@ Le script exécute les modules dans cet ordre, chacun idempotent :
 | 20 | ssh-hardening | Désactive root et l'auth par mot de passe |
 | 30 | firewall | UFW : 22/80/443 uniquement |
 | 40 | php | PHP 8.4 + FPM + extensions Laravel, pool dédié |
+| 50 | nginx-tls | Reverse proxy, certificat Let's Encrypt, en-têtes |
 
 
 ## Décisions et arbitrages
